@@ -1,0 +1,1 @@
+Specifies the type of request, the URL, if the request should be handled asynchronously or not, and other optional attributes of a request method: t

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proyecto 1: A*</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="/index.js"></script>
+  </head>
+  <body>
+    
+
+    <!--Navbar-->
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Inicio</a>
+      <a href="#news">Acerca de</a>
+      <a href="#contact">Nosotros</a>
+      <a href="#about">Código</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!--Mapa-->
+    <div id="map"></div>
+
+    <!--Menú-->
+    <div id="menu">
+
+      <form action="">
+        <label for="origen">Origen:</label>
+        <select name="origen" id="ciudades_origen">
+        </select>
+        <br><br>
+        <label for="destino">Destino:</label>
+        <select name="destino" id="ciudades_destino">
+        </select>
+        <br><br>
+        <!--input type="submit" value="Generar ruta óptima"-->
+      </form>
+    
+      <button type="button" onclick="sendSelectedOptions()">Generar ruta óptima</button>
+      <button><a href="/">Reiniciar</a></button>
+
+    </div>
+
+
+
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtuXDKxmvzETPTvaGi3Eg5yMzGGxdmEqY&region=MX&language=es&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+  </body>
+
+</html>
