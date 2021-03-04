@@ -1,10 +1,15 @@
 # A-Star_Maps
-Finding best route between cities with A* Search Method implemented in LISP and displayed in a Node WebApp and using Google Maps API.
+Finding the best route between cities with A* Search Method implemented in LISP, using Google Maps API and displaying the GUI in a Node WebApp.
 
-## School Project for Artificial Intelligence Class at ITAM by Dr.Cairó
+## School Project for Artificial Intelligence Class at ITAM
+
+## Professor:
+### - Dr. Osvaldo Cairó
+
+### - Diego Hernández
 
 ## Team members:
-- Diego Hernández
-- Carlos Delgado
-- Andrés Quevedo
-- Mariano Franco
+### - Diego Hernández
+### - Carlos Delgado
+### - Andrés Quevedo
+### - Mariano Franco
