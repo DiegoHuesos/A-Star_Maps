@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #292c2f;
+  background-color: #004882;
 }
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
@@ -14,7 +14,7 @@ html, body {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #004882;
   overflow: hidden;
 }
 
@@ -72,9 +72,14 @@ html, body {
 
 #menu {
 	min-height:inherit;
-	width: 100%;
-	background-color: #194d81;
+	width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 20px;
+	/*background-color: #194d81;*/
 	color: white;
+  display: flex;
+  justify-content: space-around;
 }
 
 img {
@@ -83,4 +88,64 @@ img {
 }
 p {
 	margin: 0;
+}
+
+.button {
+  height: fit-content;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.bt2{
+  background-color: #ff9900;
+}
+.bt2 a{
+ color: #ddd;
+ text-decoration: none;
+ 
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #004882;
+}
+
+.box {
+  padding: 5px;
+  display: flex;
+  align-content: space-around;
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 10px;
+  width: 250px;
+  border: none;
+  font-size: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
 }

@@ -1,0 +1,10 @@
+(setq adjInicial 
+	'(
+	(Veracruz (Nuevo_Laredo 300))
+	(Nuevo_Laredo (Monterrey 10) (Veracruz 300))
+	(Monterrey (Nuevo_Laredo 10) (Colima 200) )
+	( Colima (Monterrey 200) )
+	)
+)
+
+

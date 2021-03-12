@@ -1,0 +1,1 @@
+(setq inicio 'MERIDA objetivo 'JUAREZ) (astar inicio objetivo)

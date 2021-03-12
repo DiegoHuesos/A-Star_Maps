@@ -1,0 +1,155 @@
+//busca si obj es elemento de la lista
+(defun miembro(obj lst) 
+    (
+       cond
+            ( (null lst) (nil) )
+            ( (equal (car lst) obj ) t)     
+            ( t (miembro (cdr lst)))
+    )
+)
+
+//cuenta la cantidad de atomos entre todos los elemtnos de lst (a profundidad)
+(setq cont 0)
+(defun cuenta(lst)
+    (
+        cond
+            ((null lst) )
+            ( t
+                (cond
+                    ( (atom (car lst)) (incf cont) )
+                    ( t (cuenta (car lst)) )
+                )
+                (cuenta (cdr lst))
+            )
+    )
+
+)
+
+
+
+
+
+//te da una lista con los primeros n elementos de la lista
+(defun primerosN(n lst) 
+    (reverse (nthcdr  (- (length lst) n) (reverse lst)))
+)
+
+//quita los ultimos n elementos de la lista
+(defun sinUltimosN (n lst)
+    (reverse (nthcdr n (reverse lst)))
+)
+
+//quita primeros n y los ultimos m
+(defun sinExtremos (n m lst)
+    (reverse  (sinUltimosN  n (reverse (sinUltimosN m lst)) ))
+)
+
+
+eleva m ^ n
+(defun potencia(base pot)
+    (if (= pot 0) 1 (* base (potencia base (decf pot))))
+)
+
+(defun binPow(base pot)
+    (cond 
+        ( (zerop pot) 1)
+        ( t
+            (setq mid (binPow base (/ (- pot (mod pot 2)) 2))) 
+            (if (zerop (mod pot 2))
+                    (* mid mid)
+                    (* mid mid base)
+            )
+        )
+    )
+)
+
+Fibonacci
+(defun fibonacci (n)
+    (if (<= n 1) 
+        1 
+        ( + (fibonacci (- n 1)) (fibonacci (- n 2)))) 
+)
+
+
+(defun tree-reverse(tree)
+    (if (listp tree) (mapcar #'tree-reverse (reverse tree)) tree)
+)
+
+
+reverse de una lista profundidad
+(defun reverseP(lst)
+    (cond
+        ( (null lst) () )
+        ( (listp (car lst)) (append (reverseP (cdr lst)) (list (reverseP (car lst))) ))
+        (  t  (append  (reverseP (cdr lst)) (list (car lst) )))
+    )
+)
+
+suma de los elementos de una lista a profundidad
+(defun sumaP (lst)
+    (cond  
+        ( (atom lst) (if (numberp lst) lst 0))
+        ( t (apply #'+ (mapcar #'sumaP lst)))
+    )
+)
+
+
+#pasar lista de símbolos (no números) a string con espacios
+(defun tostr (lst)
+	(apply #'concatenate 'string 
+		(mapcar #'(lambda (sim) (concatenate 'string (string sim) " ")) lst)
+	)
+)
+
+pasar de lista a string (quitando paréntesis)
+(defun tostr (lst)
+	(cond
+		( (atom lst) (concatenate 'string (if (numberp lst) (write-to-string lst) (string lst) ) " ") )
+		( t  	(apply #'concatenate 'string (mapcar #'tostr lst) ) )
+	)
+)
+
+Para leer de un archivo
+line es un string
+(setq band false)
+(let ((in (open "./list/lista.txt" :if-does-not-exist nil)))
+  (when in
+    (loop for line = (read-line in nil)
+	(if (string= "" line) (format T " hey ") ())
+        
+    (close in))
+)
+
+(let ((in (open "./lista.txt" :if-does-not-exist nil))) 
+(when in 
+(loop for line = (read-line in nil) 
+while line do (if (string= "" line) (format T " hey ") (format T " hola "))) 
+(close in))) 
+
+(setq band NIL)
+(let ((in (open "/some/file/name.txt" :if-does-not-exist nil))) 
+  (when in 
+    (loop for line = (read-line in nil) 
+        while line 
+	(progn
+		(if band (progn (setq nodo line) (setq band T)))
+		(	
+	)    
+    ) 
+  (close in))) 
+
+(let ((distance-info (make-hash-table :size 20))
+      (path-predecessor-info (make-hash-table :size 20)) )
+  (defun set-distances (x y)
+    (setf (gethash x distance-info) y) )
+  (defun get-distances (x)
+    (gethash x distance-info) )
+  (defun set-predecessor (x y)
+    (setf (gethash x path-predecessor-info) y) )
+  (defun get-predecessor (x)
+    (gethash x path-predecessor-info) )
+  )
+
+
+(setq adj (make-hash-table))
+(loop for lst in lstIni do (setf (gethash (car lst) adj) (cdr lst)))

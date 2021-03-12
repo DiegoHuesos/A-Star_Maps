@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proyecto 1: A*</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="/index.js"></script>
+
+    <style>
+      .grid-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto ;
+        padding: 40px;
+      }
+      .grid-item {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .card {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 250px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+
+      img {
+        border-radius: 5px 5px 0 0;
+        
+      }
+
+      .container {
+        padding: 2px 16px;
+      }
+
+      .team{
+        width: 100%;
+        display: flex;
+        align-content:center;
+      }
+    </style>
+  </head>
+  <body>
+    
+
+    <!--Navbar-->
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="active">Inicio</a>
+      <a href="/about">Acerca de</a>
+      <a href="/about_us">Nosotros</a>
+      <a target="_blank" href="https://github.com/DiegoHuesos/A-Star_Maps">Código</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <h2>Equipo de desarrollo</h2>
+
+    <div class="team">
+      <div class="grid-container"> 
+        <div class="grid-item">
+          <div class="card">
+            <img src="/img/diego.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Diego Hernández</b></h4> 
+              <p>Desarrollo Web e Integración</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="card">
+            <img src="/img/carlos.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Diego Hernández</b></h4> 
+              <p>Desarrollo Web e Integración</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="card">
+            <img src="/img/andres.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Diego Hernández</b></h4> 
+              <p>Desarrollo Web e Integración</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <div class="card">
+            <img src="/img/andres.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Diego Hernández</b></h4> 
+              <p>Desarrollo Web e Integración</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,7 @@
+(setq coordsInicial '(
+    (Veracruz (0 0))
+    (Nuevo_Laredo (300 0))
+    (Monterrey (300 10))
+    (Colima (-500.9 10))
+    )
+)

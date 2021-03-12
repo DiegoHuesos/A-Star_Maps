@@ -1,0 +1,59 @@
+(defun astar (inicio objetivo)
+    ;;creo abierto y cerrado
+    ;;cerrado es hash table 
+    ;; abierto es un priority queue 
+    ;; predecesor es un hash table
+    (setq cerrado (make-hash-table))
+    (setq abierto (make-empty-queue))
+    (setq predecesor (make-hash-table))
+
+    ;; meto el inicial al queue
+    ;; abierto tiene estados:
+    ;;  (costo + heuristica , nodo , predecesor)
+    ;; lo llamo con costo cero, porque entra para ser el primero
+    ;; en salir, y no vale la pena mandar a llamar a la heuristica
+    (enqueue-by-priority abierto (list (list 0 inicio NIL)) 'car)
+
+    (loop do
+        ;;mientras abierto no sea nulo, continuo
+        (if (empty-queue? abierto) (return NIL))  
+        ;; saco al tope del heap
+        (setq lnodo (queue-front abierto))
+        (remove-front abierto)
+
+        ;; si no estas en cerrado, te visito
+        (cond 
+            ((gethash (second lnodo) cerrado) ()) 
+            ( T 
+                ;;te marco como visitado
+                (setf (gethash (second lnodo) cerrado) T)
+                ;;guardo tu predecesor 
+                (setf (gethash (second lnodo) predecesor) (third lnodo))
+                ;;checo si eres el final
+                (if (eql objetivo (second lnodo)) (return T))
+                ;;meto a mis hijos al heap
+                (enqueue-by-priority abierto 
+                (mapcar #'(lambda (par) (list (+ (first lnodo) (second par) (heuristica (first par) objetivo) (- (heuristica (second lnodo) objetivo))) (first par) (second lnodo)))  (gethash (second lnodo) adj))
+                'car
+                )
+            )
+        ) 
+    )
+
+    ;;creo la lista respuesta 
+    (setq resp (list))
+    (loop do
+        (if (eql objetivo NIL) (return))
+        (push objetivo resp)
+        (setq objetivo (gethash objetivo predecesor))
+    )
+    (if (not (eql (car resp) inicio)) (setq resp NIL))
+    ;;la escribo en un archivo 
+    (with-open-file (str "./lisp/resp.txt" 
+                     :direction :output 
+                     :if-exists :supersede 
+                     :if-does-not-exist :create) 
+    (format str (tostr resp))) 
+    resp
+)
+
