@@ -1,1 +1,1 @@
-(setq inicio 'MERIDA objetivo 'JUAREZ) (astar inicio objetivo)
+(setq inicio 'CIUDAD_BENITO_JUAREZ objetivo 'AGUASCALIENTES) (astar inicio objetivo)
